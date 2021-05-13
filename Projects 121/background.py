@@ -1,6 +1,6 @@
-import cv2
+from cv2 import cv2
 import time
-import numpy
+import numpy as np
 
 # Start the video capture
 video = cv2.VideoCapture(0) 
