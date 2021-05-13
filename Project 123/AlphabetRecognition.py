@@ -33,6 +33,7 @@ while(True):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         # Drawing a box in the center of the video
         height, width = gray.shape
+        bottom_right = (int(w/2 + 56), int(h/2 + 56))
         upper_left = (int(width / 2 - 56), int(height / 2 - 56))
         cv2.rectangle(gray, upper_left, bottom_right, (0, 255, 0), 2)
         # To only consider the area inside the box
@@ -62,7 +63,7 @@ while(True):
     except Exception as e:
             pass
 
-cap.release()
+cam.release()
 cv2.destroyAllWindows()
 
 
