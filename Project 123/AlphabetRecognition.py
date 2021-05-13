@@ -15,6 +15,10 @@ y = pd.read_csv("labels.csv")["labels"]
 # Splitting the data to train and test the model
 x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=9, train_size=3500, test_size=500)
 
+# Scaling the data
+x_train_scaled = x_train/255.0
+x_test_scaled = x_test/255.0
+
 # Fitting the data 
 clf = LogisticRegression(solver='saga', multi_class='multinomial').fit(x_train_scaled, y_train)
 
