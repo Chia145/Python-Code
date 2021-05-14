@@ -10,6 +10,10 @@ import PIL.ImageOps
 x = np.load('image.npz')['arr_0']
 y = pd.read_csv("labels.csv")["labels"]
 
+# Classifying the data
+classes = ["A", "B", "C", "D", "E", "F", "G", "H", "I","J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "W", "X", "Y","Z"]
+numClasses = len(classes)
+
 # Training, testing, and scaling the data
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, random_state = 9, train_size = 7500, test_size = 2500)
 xtrainScale = xtrain/255.0
